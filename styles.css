@@ -112,3 +112,21 @@ button {
 button:hover {
   background-color: #00c6ff;
 }
+
+.images {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.images img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

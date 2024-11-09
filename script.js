@@ -18,6 +18,30 @@ const countdown = () => {
   };
   updateHeaderAndSubtitle(currentTargetDate);
 
+
+  const toss = Math.floor(Math.random() * 2) + 1;
+  if (toss === 1) {
+    fetch("https://api.thecatapi.com/v1/images/search")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let imagesData = data;
+        imagesData.map(function (imageData) {
+          document.getElementById("img1").src = imageData.url;
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } else {
+    fetch("https://dog.ceo/api/breeds/image/random")
+      .then((response) => response.json())
+      .then((json) => {
+        document.getElementById("img1").src = json.message;
+      });
+  }
+
   setInterval(() => {
     const now = new Date().getTime();
 
